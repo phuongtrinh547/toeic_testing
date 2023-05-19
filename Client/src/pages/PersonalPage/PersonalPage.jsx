@@ -108,7 +108,7 @@ export default function PersonalPage() {
 										history && history.map((his, i) => (
 											<tr>
 												<td>{increID = increID + 1}</td>
-												<td>{his.topic}</td>
+												<td>{his.topic.title}</td>
 												<td>{his.point}</td>
 												<td>{his.createdAt.slice(0, new Date().toISOString().indexOf("T"))}</td>
 											</tr>

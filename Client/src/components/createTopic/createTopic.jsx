@@ -415,7 +415,7 @@ export function CreateTopic() {
 						</div>
 						<div className="input-item">
 							<label htmlFor="title-topic">Paragraph:</label>
-							<textarea type="text" name="paragraph" placeholder="Enter paragraph" value={exercise.paragraph} onChange={handleExerciseInput} />
+							<textarea className="add-passages" type="text" name="paragraph" placeholder="Enter paragraph" value={exercise.paragraph} onChange={handleExerciseInput} />
 						</div>
 					</>
 				)
@@ -557,9 +557,9 @@ export function CreateTopic() {
 		<div className="form-new-topic">
 			<div className="topic-paper">
 				<h1>{topic.title}</h1>
-				{topic.sections.map((section, index) => (
+				{(topic.sections).map((section, index) => (
 					<div key={`section_${index}`}>
-						<p className="part">Part {topicPointer.sectionIndex + 1}</p>
+						<p className="part">Part {index + 1}</p>
 						{section.map((exerc, id) => renderExercises(exerc, `exercise_${id}`))}
 					</div>
 				))}

@@ -13,10 +13,6 @@ const ResultSchema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: 'Topics'
 	},
-	title: {
-		type: String,
-		ref: 'Topics'
-	},
 	point: {
 		type: Number,
 		default: 0

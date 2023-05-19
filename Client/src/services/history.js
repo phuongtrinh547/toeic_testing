@@ -8,6 +8,16 @@ async function getUserResult(history) {
 		return null
 	}
 }
+async function getRanking() {
+	try {
+		const { data } = await axios.get(`http://localhost:9000/result/ranking`)
+		if (!data) throw new Error()
+		return data.data
+	} catch (error) {
+		return null
+	}
+}
 export {
-	getUserResult
+	getUserResult,
+	getRanking
 }

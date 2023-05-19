@@ -44,7 +44,7 @@ export const getUserResult = async (req: Request, res: Response) => {
 		const userId = req.userId
 		if (!userId) return res.sendStatus(401)
 
-		const results = await ResultModel.find({ user: userId })
+		const results = await ResultModel.find({ user: userId }).populate(['topic'])
 		return res.status(200).json({
 			data: results,
 			error: null

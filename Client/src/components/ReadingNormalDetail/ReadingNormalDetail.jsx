@@ -73,7 +73,7 @@ export default function ReadingNormalDetail({ englishTest, isEditMode, submitAns
 					</form>
 					<div className="result-check">{
 						result.length > 0
-							? (result[index] ? "True" : "False")
+							? (result[index] ? "Your answer is correct" : "Your answer is incorrect")
 							: null
 					}</div>
 				</div>
