@@ -20,7 +20,7 @@ const listeningCategory = [
 const readingCategory = [
 	'Incomplete Sentences',
 	'Text Completions',
-	'Single And Multiple Passanges'
+	'Single And Multiple Passages'
 ]
 
 
@@ -436,7 +436,7 @@ export function CreateTopic() {
 					</>
 				)
 
-			case 'Single And Multiple Passanges':
+			case 'Single And Multiple Passages':
 				return (
 					<>
 						<div className="input-item">
@@ -481,7 +481,7 @@ export function CreateTopic() {
 			case 'Incomplete Sentences':
 				return <ReadingNormalDetail englishTest={exercise} isEditMode />
 
-			case 'Single And Multiple Passanges':
+			case 'Single And Multiple Passages':
 				return <ReadingCompreDetail englishTest={exercise} isEditMode />
 
 			default:

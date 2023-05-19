@@ -28,13 +28,13 @@ export default function HomePage() {
 		{ name: "Topic 6", color: "#D0E3FF" },
 	];
 	let readingExer = [
-		{ name: "Text Completion", color: "#fed1ff", image: "/images/Dictionary.svg" },
+		{ name: "Text Completions", color: "#fed1ff", image: "/images/Dictionary.svg" },
 		{ name: "Incomplete Sentences", color: "#d1daff", image: "/images/Dictionary.svg" },
-		{ name: "Single And Multiple Passanges", color: "#f0ffd1", image: "/images/Dictionary.svg" },
+		{ name: "Single And Multiple Passages", color: "#f0ffd1", image: "/images/Dictionary.svg" },
 	];
 	let listeningExer = [
 		{ name: "Photographs", color: "#f0ffd1", image: "/images/Grammar.svg" },
-		{ name: "Question-Responses", color: "#d1fff0", image: "/images/Grammar.svg" },
+		{ name: "Question Responses", color: "#d1fff0", image: "/images/Grammar.svg" },
 		{ name: "Short Talks", color: "#ffe4d1", image: "/images/Grammar.svg" },
 		{ name: "Conversations", color: "#ffe4d1", image: "/images/Grammar.svg" },
 	];

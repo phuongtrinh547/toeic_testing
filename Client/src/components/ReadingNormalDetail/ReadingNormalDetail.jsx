@@ -70,12 +70,13 @@ export default function ReadingNormalDetail({ englishTest, isEditMode, submitAns
 								<label htmlFor={`answer-${i}`}>{answer.name}</label>
 							</div>
 						))}
+						<div className="result-check">{
+							result.length > 0
+								? (result[index] ? <p className="right-ans">Your answer is correct</p> :
+									<p className="wrong-ans">Your answer is incorrect</p>)
+								: null
+						}</div>
 					</form>
-					<div className="result-check">{
-						result.length > 0
-							? (result[index] ? "Your answer is correct" : "Your answer is incorrect")
-							: null
-					}</div>
 				</div>
 			))}
 			{(!isEditMode)

@@ -97,4 +97,18 @@ $color2: #ea9aa7;
 	font-size: 1.2em;
 	padding: 0px 20px;
 	display: block;
+
+	.right-ans {
+		border: 1px solid rgb(30, 229, 30);
+		padding: 10px;
+		border-radius: 5px;
+		color: rgb(35, 174, 35);
+	}
+
+	.wrong-ans {
+		border: 1px solid red;
+		padding: 10px;
+		border-radius: 5px;
+		color: red;
+	}
 }

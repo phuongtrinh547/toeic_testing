@@ -76,7 +76,8 @@ export default function ListeningNormalDetail({ englishTest, isEditMode, submitA
 					</form>
 					<div className="result-check">{
 						result.length > 0
-							? (result[index] ? "Your answer is correct" : "Your answer is incorrect")
+							? (result[index] ? <p className="right-ans">Your answer is correct</p> :
+								<p className="wrong-ans">Your answer is incorrect</p>)
 							: null
 					}</div>
 				</div>

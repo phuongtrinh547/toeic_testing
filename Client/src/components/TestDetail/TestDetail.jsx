@@ -164,7 +164,7 @@ export default function TestDetail() {
 					selectedAns={answers[exerciseIndex].length === 0 ? undefined : answers[exerciseIndex]}
 				/>
 
-			case 'Single And Multiple Passanges':
+			case 'Single And Multiple Passages':
 				return <ReadingCompreDetail
 					englishTest={exercise}
 					isEditMode={true}

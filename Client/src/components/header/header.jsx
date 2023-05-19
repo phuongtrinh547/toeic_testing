@@ -44,21 +44,27 @@ export default function Header() {
 					<span style={{ color: "#6088E0" }}>.test</span>
 				</Link>
 				<div className="nav">
-					<Link to={'testPage'} className="nav-item">Tests</Link>
-					<div className="drop-nav">
-						<div className="nav-item">Exercises <MdExpandMore />
-						</div>
-						<div className="drop-content">
-							<div className="drop-item">
-								<Link className="item" to={'listeningPage'}>Listening</Link>
+					{user?.role === "user"
+						? (
+							<div className="manager">
+								<Link to={'testPage'} className="nav-item">Tests</Link>
+								<div className="drop-nav">
+									<div className="nav-item">Exercises <MdExpandMore />
+									</div>
+									<div className="drop-content">
+										<div className="drop-item">
+											<Link className="item" to={'listeningPage'}>Listening</Link>
+										</div>
+										<div className="drop-item">
+											<Link className="item" to={'readingPage'}>Reading</Link>
+										</div>
+									</div>
+								</div>
+								<Link to={"rankPage"} className="nav-item">Rank</Link>
+								<Link to={"contactPage"} className="nav-item">Contact us</Link>
 							</div>
-							<div className="drop-item">
-								<Link className="item" to={'readingPage'}>Reading</Link>
-							</div>
-						</div>
-					</div>
-					<Link to={"rankPage"} className="nav-item">Rank</Link>
-					<Link to={"contactPage"} className="nav-item">Contact us</Link>
+						) :
+						""}
 					{user?.role === "teacher"
 						? (
 							<div className="manager">

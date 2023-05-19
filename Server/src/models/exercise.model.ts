@@ -13,10 +13,10 @@ enum ExerciseQuestionCategory {
 	Photographs = 'Photographs',
 	QuestionResponses = 'Question Responses',
 	ShortTalks = 'Short Talks',
-	TextCompletion = 'Text Completions',
+	TextCompletions = 'Text Completions',
 	Conversations = 'Conversations',
 	IncompleteSentences = 'Incomplete Sentences',
-	SingleAndMultiplePassanges = 'Single And Multiple Passanges'
+	SingleAndMultiplePassages = 'Single And Multiple Passages'
 }
 
 const ExerciseSchema = new Schema({

@@ -20,7 +20,7 @@ const listeningCategory = [
 const readingCategory = [
 	'Incomplete Sentences',
 	'Text Completions',
-	'Single And Multiple Passanges'
+	'Single And Multiple Passages'
 ]
 
 
@@ -96,7 +96,7 @@ export function CreateExercise() {
 			setExercise(
 				{
 					title: 'Title',
-					questionCategory: "Text Completion",
+					questionCategory: "Text Completions",
 					questions: [{
 						question: "Your question?",
 						answers: [
@@ -211,7 +211,7 @@ export function CreateExercise() {
 					questions: isInit ? [readingNormalTestInitState] : [...s.questions, readingNormalTestInitState]
 				}))
 
-			case 'Single and Multiple Passanges':
+			case 'Single And Multiple Passages':
 				return setExercise(s => ({
 					...s,
 					paragraph: 'Paragraph',
@@ -401,7 +401,7 @@ export function CreateExercise() {
 					</>
 				)
 
-			case 'Single And Multiple Passanges':
+			case 'Single And Multiple Passages':
 				return (
 					<>
 						<div className="input-item">
@@ -446,7 +446,7 @@ export function CreateExercise() {
 			case 'Incomplete Sentences':
 				return <ReadingNormalDetail englishTest={exercise} isEditMode />
 
-			case 'Single And Multiple Passanges':
+			case 'Single And Multiple Passages':
 				return <ReadingCompreDetail englishTest={exercise} isEditMode />
 
 			default:
