@@ -27,8 +27,27 @@ async function addExercise(exercise) {
 		return null
 	}
 }
+async function getExercise() {
+	try {
+		const { data } = await axios.get(`http://localhost:9000/exercise/get-all`)
+		if (!data) throw new Error()
+		return data.data
+	} catch (error) {
+		return null
+	}
+}
+async function deleteExercise(idExercise) {
+	try {
+		const { data } = await axios.delete(`http://localhost:9000/exercise/delete/` + idExercise)
+		if (!data) throw new Error()
+		return data.data
+	} catch (error) {
+		return null
+	}
+}
 export {
 	addExercise,
 	getExerciseByCategory,
-	getExerciseById
+	getExerciseById,
+	getExercise
 }

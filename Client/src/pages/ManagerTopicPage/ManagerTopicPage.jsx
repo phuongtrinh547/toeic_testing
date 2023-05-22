@@ -2,7 +2,17 @@ import "./ManagerTopicPage.scss"
 import { BsTrash } from "react-icons/bs"
 import { AiOutlineEdit } from "react-icons/ai"
 import { Link } from "react-router-dom"
+import { useEffect, useState } from "react";
+import { getTopic } from "../../services/auth";
 export default function ManagerTopic() {
+	const [topic, setTopic] = useState(null);
+	let inCreID = 0
+	useEffect(() => {
+		(async () => {
+			const topicRes = await getTopic()
+			setTopic(topicRes)
+		})()
+	}, [])
 	const topicName = {
 		number: "1",
 		name: "Practice Test 1 - TOEIC Reading, Listening test",
@@ -19,16 +29,20 @@ export default function ManagerTopic() {
 						<th>Date</th>
 						<th>Action</th>
 					</tr>
-					<tr>
-						<td>{topicName.number}</td>
-						<td>{topicName.name}</td>
-						<td>{topicName.date}</td>
-						<td className="action-topic">
-							<div className="view-topic">View</div>
-							<div className="edit-topic"><AiOutlineEdit /></div>
-							<div className="delete-topic"><BsTrash /></div>
-						</td>
-					</tr>
+					{
+						topic && topic.map((list, ind) => (
+							<tr>
+								<td>{inCreID = inCreID + 1}</td>
+								<td className="topic-name">{list.title}</td>
+								<td>{list.createdAt.slice(0, new Date().toISOString().indexOf("T"))}</td>
+								<td className="action-topic">
+									<div className="view-topic">View</div>
+									<div className="edit-topic"><AiOutlineEdit /></div>
+									<div className="delete-topic"><BsTrash /></div>
+								</td>
+							</tr>
+						))
+					}
 				</table>
 			</div>
 			<div className="new-topic">

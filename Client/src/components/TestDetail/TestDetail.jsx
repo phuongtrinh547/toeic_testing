@@ -220,10 +220,10 @@ export default function TestDetail() {
 										const qId = (sA.length - 1) * sId + eId
 										return (
 											<div
-												className={`${exer._id === exercise._id
-													? "sentence-elem--active sentence-elem"
-													: "sentence-elem"
-													} ${answers[qId].length > 0 ? "sentence-elem--visited" : ""}`}
+												className={`
+												${exer._id === exercise._id ? "sentence-elem--active sentence-elem" : "sentence-elem"} 
+												${answers[qId].length > 0 ? "sentence-elem--visited" : ""}
+												`}
 												onClick={() => selectQuestion(exer, qId)}
 											>
 												<p>{qId + 1}</p>

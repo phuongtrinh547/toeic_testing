@@ -3,6 +3,14 @@
 	justify-content: center;
 	gap: 20px;
 	margin: 30px;
+
+	table {
+		width: 600px;
+	}
+
+	.topic-name {
+		width: 50%;
+	}
 }
 
 .view-edit-del-topic,
@@ -13,6 +21,19 @@
 }
 
 .view-edit-del-topic {
+	height: 720px;
+	overflow-y: auto;
+
+	&::-webkit-scrollbar {
+		width: 8px;
+		background-color: #e7e3e3;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #5F88DF;
+		border-radius: 10px;
+	}
+
 	.title {
 		font-size: 1.2em;
 		font-weight: 700;
@@ -21,6 +42,7 @@
 
 	.action-topic {
 		display: flex;
+		justify-content: center;
 
 		div {
 			border: 1px solid black;

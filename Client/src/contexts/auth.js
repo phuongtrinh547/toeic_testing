@@ -7,8 +7,8 @@ import { getUser } from '../services/user';
 import axios from 'axios';
 
 export const AuthContext = createContext();
-
 export function useAuth() {
+
 	return useContext(AuthContext)
 }
 
@@ -33,6 +33,7 @@ export default function AuthProvider({ children }) {
 		axios.defaults.headers.common.Authorization = ``;
 		setAccessToken(null);
 		setUser(null);
+		window.location.href = "/login"
 	};
 
 	const getUserByAccessToken = async () => {

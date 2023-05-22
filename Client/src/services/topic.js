@@ -37,9 +37,19 @@ async function getTopic() {
 		return null
 	}
 }
+async function deleteTopic(idTopic) {
+	try {
+		const { data } = await axios.delete(`http://localhost:9000/topic/delete/` + idTopic)
+		if (!data) throw new Error()
+		return data.data
+	} catch (error) {
+		return null
+	}
+}
 export {
 	addTopic,
 	getTopicById,
 	getTopic,
-	submitTest
+	submitTest,
+	deleteTopic
 }

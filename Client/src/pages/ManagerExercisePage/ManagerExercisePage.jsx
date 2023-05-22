@@ -2,14 +2,17 @@ import "./ManagerExercisePage.scss"
 import { BsTrash } from "react-icons/bs"
 import { AiOutlineEdit } from "react-icons/ai"
 import { Link } from "react-router-dom"
+import { useEffect, useState } from "react";
+import { getExercise } from "../../services/exercise";
 export default function ManagerExercise() {
-	const exerciseName = {
-		number: "1",
-		skill: "listening",
-		cate: "conversations",
-		name: "Practice Test 1 - TOEIC Reading, Listening test",
-		date: "2022-03-25"
-	}
+	const [exercise, setExercise] = useState(null);
+	let inCreID = 0
+	useEffect(() => {
+		(async () => {
+			const exerciseRes = await getExercise()
+			setExercise(exerciseRes)
+		})()
+	}, [])
 	return (
 		<div className="manager-exercise">
 			<div className="view-edit-del-exercise">
@@ -17,24 +20,26 @@ export default function ManagerExercise() {
 				<table >
 					<tr>
 						<th>Serial</th>
-						<th>Skill</th>
 						<th>Category</th>
 						<th>Name</th>
 						<th>Date</th>
 						<th>Action</th>
 					</tr>
-					<tr>
-						<td>{exerciseName.number}</td>
-						<td>{exerciseName.skill}</td>
-						<td>{exerciseName.cate}</td>
-						<td>{exerciseName.name}</td>
-						<td>{exerciseName.date}</td>
-						<td className="action-exercise">
-							<div className="view-exercise">View</div>
-							<div className="edit-exercise"><AiOutlineEdit /></div>
-							<div className="delete-exercise"><BsTrash /></div>
-						</td>
-					</tr>
+					{
+						exercise && exercise.map((list, ind) => (
+							<tr>
+								<td>{inCreID = inCreID + 1}</td>
+								<td>{list.questionCategory}</td>
+								<td>{list.title}</td>
+								<td>{list.createdAt.slice(0, new Date().toISOString().indexOf("T"))}</td>
+								<td className="action-exercise">
+									<div className="view-exercise">View</div>
+									<div className="edit-exercise"><AiOutlineEdit /></div>
+									<div className="delete-exercise"><BsTrash /></div>
+								</td>
+							</tr>
+						))
+					}
 				</table>
 			</div>
 			<div className="new-exercise">
